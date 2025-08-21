@@ -1,0 +1,42 @@
+@page "/events/{id:int}"
+
+@using EventEase.Shared
+@inject IEventService EventService
+@inject NavigationManager Nav
+
+<h1>Event Details</h1>
+
+@if (model is null)
+{
+    <div class="alert alert-warning">Event not found.</div>
+    <a class="btn btn-secondary" href="/events">Back to list</a>
+}
+else
+{
+    <EventCard EventItem="model"
+               EventItemChanged="OnModelChanged"
+               Editable="true"
+               DetailsLink="@($"/events/{model.Id}")"
+               RegisterLink="@($"/events/{model.Id}/register")" />
+
+    <button class="btn btn-secondary" @onclick="BackToList">Back to list</button>
+}
+
+@code {
+    [Parameter] public int id { get; set; }
+    private Event? model;
+
+    protected override void OnParametersSet()
+    {
+        model = EventService.GetById(id);
+    }
+
+    private void OnModelChanged(Event updated)
+    {
+        model = updated;
+        EventService.Update(updated);
+        StateHasChanged();
+    }
+
+    private void BackToList() => Nav.NavigateTo("/events");
+}

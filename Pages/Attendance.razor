@@ -1,0 +1,82 @@
+@page "/attendance"
+@inject IEventService EventService
+@inject IRegistrationService RegistrationService
+
+<h1>Attendance</h1>
+
+@if (events is null)
+{
+    <p>Loading...</p>
+}
+else if (events.Count == 0)
+{
+    <p>No events available.</p>
+}
+else
+{
+    <div style="display:grid; grid-template-columns: 1fr 2fr; gap:1rem;">
+        <div>
+            <h3>Events</h3>
+            <ul class="list-group">
+                @foreach (var e in events)
+                {
+                    var count = RegistrationService.CountByEvent(e.Id);
+                    <li class="list-group-item" @onclick="(() => Select(e.Id))"
+                        style="cursor:pointer; display:flex; justify-content:space-between;">
+                        <span>@e.Name (@e.Date.ToShortDateString())</span>
+                        <span class="badge bg-primary rounded-pill">@count</span>
+                    </li>
+                }
+            </ul>
+        </div>
+        <div>
+            <h3>Attendees</h3>
+            @if (selectedId is null)
+            {
+                <p>Select an event to view attendees.</p>
+            }
+            else
+            {
+                var regs = RegistrationService.GetByEvent(selectedId.Value);
+                @if (regs.Count == 0)
+                {
+                    <p>No registrations yet.</p>
+                }
+                else
+                {
+                    <table class="table">
+                        <thead>
+                            <tr><th>Name</th><th>Email</th><th>Registered</th></tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var r in regs)
+                        {
+                            <tr>
+                                <td>@r.AttendeeName</td>
+                                <td>@r.Email</td>
+                                <td>@r.RegisteredAt.ToLocalTime()</td>
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+                }
+            }
+        </div>
+    </div>
+}
+
+@code {
+    private List<EventEase.Models.Event>? events;
+    private int? selectedId;
+
+    protected override void OnInitialized()
+    {
+        events = EventService.GetAll();
+    }
+
+    private void Select(int id)
+    {
+        selectedId = id;
+        StateHasChanged();
+    }
+}

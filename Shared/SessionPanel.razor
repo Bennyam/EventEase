@@ -1,0 +1,25 @@
+@inject ISessionService Session
+
+<div class="alert alert-info" style="margin-bottom:1rem;">
+    @if (!string.IsNullOrWhiteSpace(Session.CurrentUserName))
+    {
+        <span>Signed in as <strong>@Session.CurrentUserName</strong> (@Session.CurrentUserEmail)</span>
+        @if (Session.LastRegisteredEventId is not null)
+        {
+            <span> • last event: @Session.LastRegisteredEventId</span>
+        }
+        <button class="btn btn-sm btn-outline-secondary" style="margin-left:.5rem;" @onclick="Logout">Clear</button>
+    }
+    else
+    {
+        <span>No active session. Register for an event to start.</span>
+    }
+</div>
+
+@code {
+    protected override void OnInitialized()
+    {
+        Session.OnChange += StateHasChanged;
+    }
+    void Logout() => Session.Clear();
+}

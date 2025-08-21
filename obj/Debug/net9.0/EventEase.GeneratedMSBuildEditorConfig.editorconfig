@@ -28,16 +28,32 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/benam/Documents/Programmeren/Oefen projecten/EventEase/EventEase/Pages/Counter.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
+[C:/Users/benam/Documents/Programmeren/Oefen projecten/EventEase/EventEase/Pages/Attendance.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXR0ZW5kYW5jZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/benam/Documents/Programmeren/Oefen projecten/EventEase/EventEase/Pages/EventDetails.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXZlbnREZXRhaWxzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/benam/Documents/Programmeren/Oefen projecten/EventEase/EventEase/Pages/Events.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXZlbnRzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/benam/Documents/Programmeren/Oefen projecten/EventEase/EventEase/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/benam/Documents/Programmeren/Oefen projecten/EventEase/EventEase/Pages/Weather.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV2VhdGhlci5yYXpvcg==
+[C:/Users/benam/Documents/Programmeren/Oefen projecten/EventEase/EventEase/Pages/Register.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0ZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/benam/Documents/Programmeren/Oefen projecten/EventEase/EventEase/Shared/EventCard.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXEV2ZW50Q2FyZC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/benam/Documents/Programmeren/Oefen projecten/EventEase/EventEase/Shared/SessionPanel.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFNlc3Npb25QYW5lbC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/benam/Documents/Programmeren/Oefen projecten/EventEase/EventEase/_Imports.razor]

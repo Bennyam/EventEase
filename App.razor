@@ -1,12 +1,29 @@
-﻿<Router AppAssembly="@typeof(App).Assembly">
+﻿@using Microsoft.AspNetCore.Components
+
+<Router AppAssembly="@typeof(App).Assembly">
     <Found Context="routeData">
-        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
-        <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+        <ErrorBoundary @ref="eb">
+            <ChildContent>
+                <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+                <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+            </ChildContent>
+            <ErrorContent>
+                <div class="alert alert-danger" role="alert">
+                    Oeps, er ging iets mis.
+                    <button class="btn btn-sm btn-outline-secondary" @onclick="() => eb?.Recover()">Herstellen</button>
+                </div>
+            </ErrorContent>
+        </ErrorBoundary>
     </Found>
     <NotFound>
-        <PageTitle>Not found</PageTitle>
         <LayoutView Layout="@typeof(MainLayout)">
-            <p role="alert">Sorry, there's nothing at this address.</p>
+            <h1>Page not found</h1>
+            <p>We konden deze pagina niet vinden.</p>
+            <a class="btn btn-primary" href="/events">Ga naar Events</a>
         </LayoutView>
     </NotFound>
 </Router>
+
+@code {
+    private ErrorBoundary? eb;
+}

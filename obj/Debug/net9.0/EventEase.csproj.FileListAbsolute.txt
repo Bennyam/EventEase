@@ -199,8 +199,8 @@ C:\Users\benam\Documents\Programmeren\Oefen projecten\EventEase\EventEase\bin\De
 C:\Users\benam\Documents\Programmeren\Oefen projecten\EventEase\EventEase\bin\Debug\net9.0\wwwroot\_framework\icudt_CJK.tjcz0u77k5.dat
 C:\Users\benam\Documents\Programmeren\Oefen projecten\EventEase\EventEase\bin\Debug\net9.0\wwwroot\_framework\icudt_EFIGS.tptq2av103.dat
 C:\Users\benam\Documents\Programmeren\Oefen projecten\EventEase\EventEase\bin\Debug\net9.0\wwwroot\_framework\icudt_no_CJK.lfu7j35m59.dat
-C:\Users\benam\Documents\Programmeren\Oefen projecten\EventEase\EventEase\bin\Debug\net9.0\wwwroot\_framework\EventEase.6k5uarp5rg.wasm
-C:\Users\benam\Documents\Programmeren\Oefen projecten\EventEase\EventEase\bin\Debug\net9.0\wwwroot\_framework\EventEase.k9rpushala.pdb
+C:\Users\benam\Documents\Programmeren\Oefen projecten\EventEase\EventEase\bin\Debug\net9.0\wwwroot\_framework\EventEase.lmpekn9aoo.wasm
+C:\Users\benam\Documents\Programmeren\Oefen projecten\EventEase\EventEase\bin\Debug\net9.0\wwwroot\_framework\EventEase.lnizcm53dc.pdb
 C:\Users\benam\Documents\Programmeren\Oefen projecten\EventEase\EventEase\bin\Debug\net9.0\wwwroot\_framework\blazor.boot.json
 C:\Users\benam\Documents\Programmeren\Oefen projecten\EventEase\EventEase\bin\Debug\net9.0\wwwroot\_framework\blazor.webassembly.js.gz
 C:\Users\benam\Documents\Programmeren\Oefen projecten\EventEase\EventEase\bin\Debug\net9.0\wwwroot\_framework\Microsoft.AspNetCore.Authorization.bvu82j4ad3.wasm.gz
@@ -403,8 +403,8 @@ C:\Users\benam\Documents\Programmeren\Oefen projecten\EventEase\EventEase\bin\De
 C:\Users\benam\Documents\Programmeren\Oefen projecten\EventEase\EventEase\bin\Debug\net9.0\wwwroot\_framework\icudt_CJK.tjcz0u77k5.dat.gz
 C:\Users\benam\Documents\Programmeren\Oefen projecten\EventEase\EventEase\bin\Debug\net9.0\wwwroot\_framework\icudt_EFIGS.tptq2av103.dat.gz
 C:\Users\benam\Documents\Programmeren\Oefen projecten\EventEase\EventEase\bin\Debug\net9.0\wwwroot\_framework\icudt_no_CJK.lfu7j35m59.dat.gz
-C:\Users\benam\Documents\Programmeren\Oefen projecten\EventEase\EventEase\bin\Debug\net9.0\wwwroot\_framework\EventEase.6k5uarp5rg.wasm.gz
-C:\Users\benam\Documents\Programmeren\Oefen projecten\EventEase\EventEase\bin\Debug\net9.0\wwwroot\_framework\EventEase.k9rpushala.pdb.gz
+C:\Users\benam\Documents\Programmeren\Oefen projecten\EventEase\EventEase\bin\Debug\net9.0\wwwroot\_framework\EventEase.lmpekn9aoo.wasm.gz
+C:\Users\benam\Documents\Programmeren\Oefen projecten\EventEase\EventEase\bin\Debug\net9.0\wwwroot\_framework\EventEase.lnizcm53dc.pdb.gz
 C:\Users\benam\Documents\Programmeren\Oefen projecten\EventEase\EventEase\bin\Debug\net9.0\wwwroot\_framework\blazor.boot.json.gz
 C:\Users\benam\Documents\Programmeren\Oefen projecten\EventEase\EventEase\bin\Debug\net9.0\EventEase.staticwebassets.runtime.json
 C:\Users\benam\Documents\Programmeren\Oefen projecten\EventEase\EventEase\bin\Debug\net9.0\EventEase.staticwebassets.endpoints.json
@@ -617,6 +617,7 @@ C:\Users\benam\Documents\Programmeren\Oefen projecten\EventEase\EventEase\obj\De
 C:\Users\benam\Documents\Programmeren\Oefen projecten\EventEase\EventEase\obj\Debug\net9.0\EventEase.AssemblyInfo.cs
 C:\Users\benam\Documents\Programmeren\Oefen projecten\EventEase\EventEase\obj\Debug\net9.0\EventEase.csproj.CoreCompileInputs.cache
 C:\Users\benam\Documents\Programmeren\Oefen projecten\EventEase\EventEase\obj\Debug\net9.0\EventEase.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\benam\Documents\Programmeren\Oefen projecten\EventEase\EventEase\obj\Debug\net9.0\EventEase.sourcelink.json
 C:\Users\benam\Documents\Programmeren\Oefen projecten\EventEase\EventEase\obj\Debug\net9.0\webcil\Microsoft.AspNetCore.Authorization.wasm
 C:\Users\benam\Documents\Programmeren\Oefen projecten\EventEase\EventEase\obj\Debug\net9.0\webcil\Microsoft.AspNetCore.Components.wasm
 C:\Users\benam\Documents\Programmeren\Oefen projecten\EventEase\EventEase\obj\Debug\net9.0\webcil\Microsoft.AspNetCore.Components.Forms.wasm
@@ -1068,9 +1069,9 @@ C:\Users\benam\Documents\Programmeren\Oefen projecten\EventEase\EventEase\obj\De
 C:\Users\benam\Documents\Programmeren\Oefen projecten\EventEase\EventEase\obj\Debug\net9.0\compressed\75trfcm43w-tjcz0u77k5.gz
 C:\Users\benam\Documents\Programmeren\Oefen projecten\EventEase\EventEase\obj\Debug\net9.0\compressed\lfiq0gid4h-tptq2av103.gz
 C:\Users\benam\Documents\Programmeren\Oefen projecten\EventEase\EventEase\obj\Debug\net9.0\compressed\y62acmnqwm-lfu7j35m59.gz
-C:\Users\benam\Documents\Programmeren\Oefen projecten\EventEase\EventEase\obj\Debug\net9.0\compressed\gqx5ofl3a7-6k5uarp5rg.gz
-C:\Users\benam\Documents\Programmeren\Oefen projecten\EventEase\EventEase\obj\Debug\net9.0\compressed\lw84d9mf51-k9rpushala.gz
-C:\Users\benam\Documents\Programmeren\Oefen projecten\EventEase\EventEase\obj\Debug\net9.0\compressed\pqrel3z3dc-ysim3atjy5.gz
+C:\Users\benam\Documents\Programmeren\Oefen projecten\EventEase\EventEase\obj\Debug\net9.0\compressed\gqx5ofl3a7-lmpekn9aoo.gz
+C:\Users\benam\Documents\Programmeren\Oefen projecten\EventEase\EventEase\obj\Debug\net9.0\compressed\lw84d9mf51-lnizcm53dc.gz
+C:\Users\benam\Documents\Programmeren\Oefen projecten\EventEase\EventEase\obj\Debug\net9.0\compressed\pqrel3z3dc-gllvnxpfkj.gz
 C:\Users\benam\Documents\Programmeren\Oefen projecten\EventEase\EventEase\obj\Debug\net9.0\staticwebassets.build.json
 C:\Users\benam\Documents\Programmeren\Oefen projecten\EventEase\EventEase\obj\Debug\net9.0\staticwebassets.build.json.cache
 C:\Users\benam\Documents\Programmeren\Oefen projecten\EventEase\EventEase\obj\Debug\net9.0\staticwebassets.development.json

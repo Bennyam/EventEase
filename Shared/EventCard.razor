@@ -1,0 +1,83 @@
+@* Shared/EventCard.razor *@
+@inherits ComponentBase
+@inject IRegistrationService Regs
+
+<div class="card" style="padding:1rem; border:1px solid #ddd; border-radius:.5rem; margin-bottom:1rem; max-width:520px;">
+
+    @if (Editable)
+    {
+        <EditForm Model="EventItem" OnValidSubmit="Save" OnInvalidSubmit="OnInvalid">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+
+            <div style="margin:.5rem 0;">
+                <label>Name</label>
+                <InputText @bind-Value="EventItem.Name" class="form-control" />
+                <ValidationMessage For="@(() => EventItem.Name)" />
+            </div>
+
+            <div style="margin:.5rem 0;">
+                <label>Date</label>
+                <InputDate @bind-Value="EventItem.Date" class="form-control" />
+                <ValidationMessage For="@(() => EventItem.Date)" />
+            </div>
+
+            <div style="margin:.5rem 0;">
+                <label>Location</label>
+                <InputText @bind-Value="EventItem.Location" class="form-control" />
+                <ValidationMessage For="@(() => EventItem.Location)" />
+            </div>
+
+            <div style="display:flex; gap:.5rem; align-items:center;">
+                <button type="submit" class="btn btn-primary">Save</button>
+                @if (!string.IsNullOrWhiteSpace(DetailsLink))
+                {
+                    <a class="btn btn-link" href="@DetailsLink">Details</a>
+                }
+                @if (!string.IsNullOrWhiteSpace(RegisterLink))
+                {
+                    <a class="btn btn-link" href="@RegisterLink">Register</a>
+                }
+            </div>
+        </EditForm>
+    }
+    else
+    {
+        <h3>@EventItem.Name</h3>
+        <div>@EventItem.Date.ToShortDateString()</div>
+        <div>@EventItem.Location</div>
+        <div>Attendees: @Regs.CountByEvent(EventItem.Id)</div>
+
+        <div style="margin-top:.5rem;">
+            @if (!string.IsNullOrWhiteSpace(DetailsLink))
+            {
+                <a class="btn btn-link" href="@DetailsLink">Details</a>
+            }
+            @if (!string.IsNullOrWhiteSpace(RegisterLink))
+            {
+                <a class="btn btn-link" href="@RegisterLink">Register</a>
+            }
+        </div>
+    }
+
+</div>
+
+@code {
+    [Parameter] public Event EventItem { get; set; } = new();
+    [Parameter] public EventCallback<Event> EventItemChanged { get; set; }
+    [Parameter] public bool Editable { get; set; } = false;
+    [Parameter] public string? DetailsLink { get; set; }
+    [Parameter] public string? RegisterLink { get; set; }
+
+    private async Task Save()
+    {
+        if (EventItemChanged.HasDelegate)
+            await EventItemChanged.InvokeAsync(EventItem);
+    }
+
+    private void OnInvalid(EditContext _)
+    {
+        // Fouten worden getoond via ValidationSummary/ValidationMessage.
+        // Eventueel hier logging toevoegen.
+    }
+}

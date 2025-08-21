@@ -1,0 +1,85 @@
+@page "/events"
+@using EventEase.Shared
+@inject IEventService EventService
+
+<h1>Events</h1>
+
+<h3>Add Event</h3>
+<EditForm Model="newEvent" OnValidSubmit="AddEvent">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div style="display:flex; gap:1rem; flex-wrap:wrap; align-items:flex-end;">
+        <div>
+            <label>Name</label>
+            <InputText @bind-Value="newEvent.Name" class="form-control" />
+            <ValidationMessage For="@(() => newEvent.Name)" />
+        </div>
+        <div>
+            <label>Date</label>
+            <InputDate @bind-Value="newEvent.Date" class="form-control" />
+            <ValidationMessage For="@(() => newEvent.Date)" />
+        </div>
+        <div>
+            <label>Location</label>
+            <InputText @bind-Value="newEvent.Location" class="form-control" />
+            <ValidationMessage For="@(() => newEvent.Location)" />
+        </div>
+        <button type="submit" class="btn btn-primary">Add</button>
+    </div>
+</EditForm>
+
+<hr />
+
+@if (events is null)
+{
+    <p>Loading...</p>
+}
+else if (events.Count == 0)
+{
+    <p>No events available.</p>
+}
+else
+{
+    <Virtualize Items="events" Context="ev" ItemSize="120" OverscanCount="3">
+        <ItemContent>
+            <div style="margin-bottom:.5rem;">
+                <EventCard @key="ev.Id"
+                           EventItem="ev"
+                           Editable="false"
+                           DetailsLink="@($"/events/{ev.Id}")"
+                           RegisterLink="@($"/events/{ev.Id}/register")" />
+                <button class="btn btn-outline-danger" @onclick="() => DeleteEvent(ev.Id)">Delete</button>
+            </div>
+        </ItemContent>
+    </Virtualize>
+}
+
+@code {
+    private List<Event>? events;
+    private Event newEvent = new() { Date = DateTime.Today };
+
+    protected override void OnInitialized()
+    {
+        events = EventService.GetAll();
+    }
+
+    private void AddEvent()
+    {
+        EventService.Add(newEvent);
+        Refresh();
+        newEvent = new Event { Date = DateTime.Today };
+    }
+
+    private void DeleteEvent(int id)
+    {
+        EventService.Delete(id);
+        Refresh();
+    }
+
+    private void Refresh()
+    {
+        events = EventService.GetAll();
+        StateHasChanged();
+    }
+}

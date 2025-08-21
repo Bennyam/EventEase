@@ -1,0 +1,68 @@
+@page "/events/{id:int}/register"
+
+@using EventEase.Models
+@inject IEventService EventService
+@inject IRegistrationService RegistrationService
+@inject ISessionService Session
+
+<h1>Register</h1>
+
+@if (ev is null)
+{
+    <div class="alert alert-warning">Event not found.</div>
+    <a class="btn btn-secondary" href="/events">Back to list</a>
+}
+else
+{
+    <p>
+        You are registering for <strong>@ev.Name</strong> on
+        @ev.Date.ToShortDateString() in @ev.Location.
+    </p>
+
+    <EditForm Model="form" OnValidSubmit="Submit">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <div style="margin:.5rem 0;">
+            <label>Your name</label>
+            <InputText @bind-Value="form.AttendeeName" class="form-control" />
+            <ValidationMessage For="@(() => form.AttendeeName)" />
+        </div>
+        <div style="margin:.5rem 0;">
+            <label>Email</label>
+            <InputText @bind-Value="form.Email" class="form-control" />
+            <ValidationMessage For="@(() => form.Email)" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Confirm</button>
+    </EditForm>
+
+    @if (submittedReg is not null)
+    {
+        <div class="alert alert-success" style="margin-top:1rem;">
+            Thanks, <strong>@submittedReg.AttendeeName</strong>!
+            A confirmation will be sent to <strong>@submittedReg.Email</strong>.
+        </div>
+    }
+}
+
+@code {
+    [Parameter] public int id { get; set; }
+    private Event? ev;
+    private Registration form = new();
+    private Registration? submittedReg;
+
+    protected override void OnParametersSet()
+    {
+        ev = EventService.GetById(id);
+        form = new Registration { EventId = id };
+        submittedReg = null;
+    }
+
+    private void Submit()
+    {
+        submittedReg = RegistrationService.Register(form);
+
+        Session.SetUser(submittedReg.AttendeeName, submittedReg.Email, submittedReg.EventId);
+    }
+}
